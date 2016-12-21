@@ -3,6 +3,7 @@ var escala = 15;
 var comida;
 
 function setup() {
+    
     createCanvas(600, 600);
 
     //instancia um obejto s

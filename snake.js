@@ -9,6 +9,7 @@ function Snake() {
     //pega a localizacao exata de onde a comida esta
     this.eat = function(pos) {
         var d = dist(this.x, this.y, pos.x, pos.y);
+       
         if (d < 1) {
             this.total++;
             return true;
@@ -25,8 +26,11 @@ function Snake() {
 
     this.death = function() {
         for (var i=0; i < this.tail.length; i++) {
+            
             var pos = this.tail[i];
+            
             var d = dist(this.x, this.y, pos.x, pos.y);
+            
             if (d < 1) {
                 this.total = 0;
                 this.tail = [];
@@ -35,6 +39,7 @@ function Snake() {
     }
 
     this.update = function() {
+        
         if(this.total === this.tail.length) {
             for (var i=0; i<this.tail.length-1; i++) {
                 this.tail[i] = this.tail[i+1];
@@ -51,6 +56,7 @@ function Snake() {
 
     //mostra a cobrinha na tela
     this.show = function() {
+       
         //desenha a cobrinha 
         fill(255);
         rect(this.x, this.y, escala, escala);
